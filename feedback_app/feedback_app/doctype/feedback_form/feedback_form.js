@@ -10,7 +10,7 @@ frappe.ui.form.on("Feedback Form", {
 
     onload: function(frm) {
 
-        frm.set_query("feedback_form", function() {
+        frm.set_query("feedback_master", function() {
             return {
                 filters: {
                     is_active: 1
@@ -18,17 +18,21 @@ frappe.ui.form.on("Feedback Form", {
             };
         });
 
+        if (frm.is_new()) {
+            frm.set_value("user", frappe.session.user);
+        }
+
     },
 
-    feedback_form: function(frm) {
+    feedback_master: function(frm) {
 
-        if (!frm.doc.feedback_form) return;
+        if (!frm.doc.feedback_master) return;
 
         frappe.call({
             method: "frappe.client.get",
             args: {
                 doctype: "Feedback Master",
-                name: frm.doc.feedback_form
+                name: frm.doc.feedback_master
             },
             callback: function(r) {
 

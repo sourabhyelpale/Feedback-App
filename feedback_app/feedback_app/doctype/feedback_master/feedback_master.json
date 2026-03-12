@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{form_name}",
  "creation": "2026-03-12 14:40:35.622596",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -44,15 +45,13 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Module Type",
-   "options": "Module Def",
-   "reqd": 1
+   "options": "Module Def"
   },
   {
    "fieldname": "doctype_name",
    "fieldtype": "Link",
    "label": "Doctype Name",
-   "options": "DocType",
-   "reqd": 1
+   "options": "DocType"
   },
   {
    "fieldname": "section_break_cijk",
@@ -69,10 +68,11 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-03-12 14:50:14.599997",
+ "modified": "2026-03-12 16:22:24.575974",
  "modified_by": "Administrator",
  "module": "Feedback App",
  "name": "Feedback Master",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

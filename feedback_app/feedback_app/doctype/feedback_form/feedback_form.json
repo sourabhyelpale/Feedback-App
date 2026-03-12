@@ -1,16 +1,25 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{####}",
  "creation": "2026-03-12 14:41:16.109574",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_ycmf",
-  "feedback_master",
-  "module_type",
   "column_break_pojo",
+  "feedback_master",
   "date",
+  "user",
+  "column_break_adwz",
+  "project",
+  "site_name",
+  "module_type",
   "doctype_name",
+  "column_break_bhuw",
+  "email",
+  "name1",
+  "contact_no",
   "section_break_lwka",
   "question",
   "question_type",
@@ -30,14 +39,18 @@
   {
    "fieldname": "module_type",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Module Type",
-   "options": "Module Def"
+   "options": "Module Def",
+   "read_only": 1
   },
   {
    "fieldname": "doctype_name",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Doctype Name",
-   "options": "DocType"
+   "options": "DocType",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_ycmf",
@@ -48,11 +61,10 @@
    "fieldtype": "Column Break"
   },
   {
-   "default": "Today",
+   "default": "Now",
    "fieldname": "date",
-   "fieldtype": "Date",
-   "label": "Date",
-   "read_only": 1
+   "fieldtype": "Datetime",
+   "label": "Date"
   },
   {
    "fieldname": "section_break_lwka",
@@ -67,6 +79,7 @@
   {
    "fieldname": "question_type",
    "fieldtype": "Select",
+   "hidden": 1,
    "label": "Question Type",
    "options": "\nRating (1-5)\nYes/No\nText",
    "read_only": 1
@@ -101,13 +114,14 @@
    "fieldname": "answer",
    "fieldtype": "Select",
    "label": "Answer",
-   "options": "\nYes\nNo"
+   "options": "\nYes\nPartially\nNo"
   },
   {
    "fieldname": "section_break_abdc",
    "fieldtype": "Section Break"
   },
   {
+   "depends_on": "eval:doc.question;",
    "fieldname": "next",
    "fieldtype": "Button",
    "label": "Next"
@@ -151,16 +165,64 @@
    "label": "Feedback Master",
    "options": "Feedback Master",
    "reqd": 1
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name",
+   "placeholder": "first name   last name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_adwz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_bhuw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "site_name",
+   "fieldtype": "Link",
+   "label": "Site Name",
+   "options": "Site",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contact_no",
+   "fieldtype": "Phone",
+   "label": "Contact No."
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-03-12 15:18:17.373488",
+ "modified": "2026-03-12 17:40:33.637485",
  "modified_by": "Administrator",
  "module": "Feedback App",
  "name": "Feedback Form",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

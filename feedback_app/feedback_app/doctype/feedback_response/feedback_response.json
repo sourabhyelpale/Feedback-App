@@ -1,18 +1,25 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{####}",
  "creation": "2026-03-12 14:40:54.872247",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_97mm",
-  "feedback_form",
+  "feedback_master",
+  "submitted_date",
   "module_type",
   "doctype_name",
   "column_break_mzqj",
   "feedback_test",
-  "submitted_date",
   "user",
+  "project",
+  "site_name",
+  "column_break_ooxr",
+  "name1",
+  "email",
+  "contact_no",
   "section_break_dfpk",
   "feedback_answers",
   "amended_from"
@@ -31,14 +38,6 @@
   {
    "fieldname": "section_break_97mm",
    "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "feedback_form",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Feedback Master",
-   "options": "Feedback Master"
   },
   {
    "fieldname": "module_type",
@@ -72,7 +71,7 @@
   },
   {
    "fieldname": "submitted_date",
-   "fieldtype": "Date",
+   "fieldtype": "Datetime",
    "label": "Submitted Date"
   },
   {
@@ -84,16 +83,56 @@
    "fieldtype": "Table",
    "label": "Feedback Answers",
    "options": "Feedback Answer"
+  },
+  {
+   "fieldname": "column_break_ooxr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "feedback_master",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Feedback Master",
+   "options": "Feedback Master"
+  },
+  {
+   "fieldname": "contact_no",
+   "fieldtype": "Phone",
+   "label": "Contact No."
+  },
+  {
+   "fieldname": "site_name",
+   "fieldtype": "Link",
+   "label": "Site Name",
+   "options": "Site"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-03-12 14:52:40.998836",
+ "modified": "2026-03-12 17:38:40.065226",
  "modified_by": "Administrator",
  "module": "Feedback App",
  "name": "Feedback Response",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
