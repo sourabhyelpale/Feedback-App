@@ -1,0 +1,118 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-03-12 14:40:54.872247",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_97mm",
+  "feedback_form",
+  "module_type",
+  "doctype_name",
+  "column_break_mzqj",
+  "feedback_test",
+  "submitted_date",
+  "user",
+  "section_break_dfpk",
+  "feedback_answers",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Feedback Response",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_97mm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "feedback_form",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Feedback Master",
+   "options": "Feedback Master"
+  },
+  {
+   "fieldname": "module_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Module Type",
+   "options": "Module Def"
+  },
+  {
+   "fieldname": "doctype_name",
+   "fieldtype": "Link",
+   "label": "Doctype Name",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "column_break_mzqj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "feedback_test",
+   "fieldtype": "Link",
+   "label": "Feedback Test",
+   "options": "Feedback Form"
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User"
+  },
+  {
+   "fieldname": "submitted_date",
+   "fieldtype": "Date",
+   "label": "Submitted Date"
+  },
+  {
+   "fieldname": "section_break_dfpk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "feedback_answers",
+   "fieldtype": "Table",
+   "label": "Feedback Answers",
+   "options": "Feedback Answer"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-03-12 14:52:40.998836",
+ "modified_by": "Administrator",
+ "module": "Feedback App",
+ "name": "Feedback Response",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
