@@ -23,6 +23,8 @@ class FeedbackForm(Document):
         doc.submitted_date = self.date
         doc.project = self.project
         doc.site_name = self.site_name
+        doc.trainer = self.trainer
+        doc.visit_date = self.visit_date
         doc.name1 = self.name1
         doc.email = self.email
         doc.contact_no = self.contact_no

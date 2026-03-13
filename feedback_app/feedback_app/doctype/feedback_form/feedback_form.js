@@ -8,6 +8,18 @@ frappe.ui.form.on("Feedback Form", {
         frm.questions = [];
     },
 
+    setup: function(frm) {
+
+        frm.set_query("site_name", function() {
+            return {
+                filters: {
+                    project : frm.doc.project
+                }
+            };
+        });
+
+    },
+
     onload: function(frm) {
 
         frm.set_query("feedback_master", function() {

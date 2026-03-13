@@ -2,47 +2,66 @@
 // For license information, please see license.txt
 
 frappe.query_reports["Feedback Response Report"] = {
-    filters: [
+   filters: [
 
         {
             fieldname: "feedback_master",
             label: "Feedback Master",
             fieldtype: "Link",
             options: "Feedback Master",
-            reqd: 1
+            reqd: 1,
+            width: 180,
+            get_query: function() {
+                return {
+                    filters: { is_active: 1 }
+                };
+            }
         },
 
         {
             fieldname: "project",
             label: "Project",
             fieldtype: "Link",
-            options: "Project"
+            options: "Project",
+            width: 130
         },
 
         {
             fieldname: "site_name",
-            label: "Site Name",
+            label: "Site",
             fieldtype: "Link",
-			options: "Site"
+            options: "Site",
+            width: 120
         },
 
         {
             fieldname: "user",
             label: "User",
             fieldtype: "Link",
-            options: "User"
+            options: "User",
+            width: 130
+        },
+
+        {
+            fieldname: "trainer",
+            label: "Trainer",
+            fieldtype: "Link",
+            options: "User",
+            width: 130
         },
 
         {
             fieldname: "from_date",
-            label: "From Date",
-            fieldtype: "Date"
+            label: "From",
+            fieldtype: "Date",
+            width: 110
         },
 
         {
             fieldname: "to_date",
-            label: "To Date",
-            fieldtype: "Date"
+            label: "To",
+            fieldtype: "Date",
+            width: 110
         }
 
     ],

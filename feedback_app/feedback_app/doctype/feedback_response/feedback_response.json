@@ -10,10 +10,12 @@
   "feedback_master",
   "feedback_test",
   "user",
-  "column_break_mzqj",
   "submitted_date",
+  "column_break_mzqj",
   "project",
   "site_name",
+  "trainer",
+  "visit_date",
   "column_break_ooxr",
   "name1",
   "email",
@@ -106,13 +108,24 @@
    "fieldtype": "Link",
    "label": "Project",
    "options": "Project"
+  },
+  {
+   "fieldname": "trainer",
+   "fieldtype": "Link",
+   "label": "Trainer",
+   "options": "User"
+  },
+  {
+   "fieldname": "visit_date",
+   "fieldtype": "Date",
+   "label": "Visit Date"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-03-13 11:53:45.603622",
+ "modified": "2026-03-13 16:03:22.728864",
  "modified_by": "Administrator",
  "module": "Feedback App",
  "name": "Feedback Response",

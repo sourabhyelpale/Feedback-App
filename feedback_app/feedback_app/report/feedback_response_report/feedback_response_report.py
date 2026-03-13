@@ -54,6 +54,9 @@ def get_data(filters, questions):
 
     if filters.get("user"):
         conditions += " AND fr.user = %(user)s"
+    
+    if filters.get("trainer"):
+        conditions += " AND fr.trainer = %(trainer)s"
 
     if filters.get("from_date"):
         conditions += " AND DATE(fr.submitted_date) >= %(from_date)s"
