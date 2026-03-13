@@ -8,12 +8,10 @@
  "field_order": [
   "section_break_97mm",
   "feedback_master",
-  "submitted_date",
-  "module_type",
-  "doctype_name",
-  "column_break_mzqj",
   "feedback_test",
   "user",
+  "column_break_mzqj",
+  "submitted_date",
   "project",
   "site_name",
   "column_break_ooxr",
@@ -38,20 +36,6 @@
   {
    "fieldname": "section_break_97mm",
    "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "module_type",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Module Type",
-   "options": "Module Def"
-  },
-  {
-   "fieldname": "doctype_name",
-   "fieldtype": "Link",
-   "label": "Doctype Name",
-   "options": "DocType"
   },
   {
    "fieldname": "column_break_mzqj",
@@ -128,7 +112,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-03-12 17:38:40.065226",
+ "modified": "2026-03-13 11:53:45.603622",
  "modified_by": "Administrator",
  "module": "Feedback App",
  "name": "Feedback Response",

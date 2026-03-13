@@ -22,8 +22,6 @@ class FeedbackForm(Document):
         doc.user = frappe.session.user
         doc.submitted_date = self.date
         doc.project = self.project
-        doc.module_type = df.module_type
-        doc.doctype_name = df.doctype_name
         doc.site_name = self.site_name
         doc.name1 = self.name1
         doc.email = self.email

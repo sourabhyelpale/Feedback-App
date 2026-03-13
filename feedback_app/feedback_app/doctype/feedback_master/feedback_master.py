@@ -10,14 +10,15 @@ class FeedbackMaster(Document):
 
 		if self.is_active:
 
-			forms = frappe.get_all(
+			previous = frappe.get_all(
 				"Feedback Master",
 				filters={
-					"module_type": self.module_type,
-					"name": ["!=", self.name]
+					"form_name": self.form_name,
+					"name": ["!=", self.name],
+					"is_active": 1
 				},
-				fields=["name"]
+				pluck="name"
 			)
 
-			for form in forms:
-				frappe.db.set_value("Feedback Master", form.name, "is_active", 0)
+			for doc in previous:
+				frappe.db.set_value("Feedback Master", doc, "is_active", 0)

@@ -1,17 +1,15 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{form_name}",
+ "autoname": "format:{form_name}-{####}",
  "creation": "2026-03-12 14:40:35.622596",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_xto3",
   "form_name",
-  "is_active",
   "column_break_hgdh",
-  "module_type",
-  "doctype_name",
+  "is_active",
   "section_break_cijk",
   "feedback_question"
  ],
@@ -25,11 +23,11 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Name",
-   "reqd": 1,
-   "unique": 1
+   "reqd": 1
   },
   {
    "default": "1",
+   "description": "Enable this option to make the feedback form active. Disable it to deactivate the form when it is no longer required.",
    "fieldname": "is_active",
    "fieldtype": "Check",
    "in_list_view": 1,
@@ -39,19 +37,6 @@
   {
    "fieldname": "column_break_hgdh",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "module_type",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Module Type",
-   "options": "Module Def"
-  },
-  {
-   "fieldname": "doctype_name",
-   "fieldtype": "Link",
-   "label": "Doctype Name",
-   "options": "DocType"
   },
   {
    "fieldname": "section_break_cijk",
@@ -68,7 +53,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-03-12 16:22:24.575974",
+ "modified": "2026-03-13 11:49:41.072884",
  "modified_by": "Administrator",
  "module": "Feedback App",
  "name": "Feedback Master",
@@ -92,5 +77,6 @@
  "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "form_name"
 }

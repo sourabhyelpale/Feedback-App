@@ -21,6 +21,18 @@ app_license = "mit"
 # 	}
 # ]
 
+
+fixtures = [
+    {
+        "dt": "Workspace",
+        "filters": [
+            ["name", "=", "Feedback App"]
+        ]
+    }
+]
+
+
+
 # Includes in <head>
 # ------------------
 
