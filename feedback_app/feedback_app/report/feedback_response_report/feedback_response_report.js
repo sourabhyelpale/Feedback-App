@@ -2,14 +2,14 @@
 // For license information, please see license.txt
 
 frappe.query_reports["Feedback Response Report"] = {
-   filters: [
+
+    filters: [
 
         {
             fieldname: "feedback_master",
             label: "Feedback Master",
             fieldtype: "Link",
             options: "Feedback Master",
-            reqd: 1,
             width: 180,
             get_query: function() {
                 return {
@@ -68,6 +68,7 @@ frappe.query_reports["Feedback Response Report"] = {
 
     onload: function(report) {
 
+        // Download Excel Button
         report.page.add_inner_button("Download Excel", function() {
 
             let dialog = new frappe.ui.Dialog({
@@ -98,8 +99,19 @@ frappe.query_reports["Feedback Response Report"] = {
             });
 
             dialog.show();
+        });
 
+
+        // Clear Filters Button
+        report.page.add_inner_button("Clear Filters", function() {
+
+            report.filters.forEach(function(f) {
+                frappe.query_report.set_filter_value(f.df.fieldname, null);
+            });
+
+            report.refresh();
         });
 
     }
+
 };

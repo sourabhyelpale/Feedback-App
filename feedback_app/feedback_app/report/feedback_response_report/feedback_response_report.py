@@ -1,20 +1,21 @@
 # Copyright (c) 2026, QTPL and contributors
 # For license information, please see license.txt
+
 import frappe
 from frappe.utils.xlsxutils import make_xlsx
-from frappe.utils.file_manager import save_file
+
 
 def execute(filters=None):
 
-    if not filters.get("feedback_master"):
-        frappe.throw("Feedback Master is mandatory")
+    questions = []
 
-    questions = frappe.get_all(
-        "Feedback Question",
-        filters={"parent": filters.feedback_master},
-        fields=["question"],
-        order_by="idx"
-    )
+    if filters.get("feedback_master"):
+        questions = frappe.get_all(
+            "Feedback Question",
+            filters={"parent": filters.feedback_master},
+            fields=["question"],
+            order_by="idx"
+        )
 
     columns = get_columns(questions)
     data = get_data(filters, questions)
@@ -25,9 +26,12 @@ def execute(filters=None):
 def get_columns(questions):
 
     columns = [
+        {"label": "Feedback Master", "fieldname": "feedback_master", "fieldtype": "Link", "options": "Feedback Master", "width": 180},
         {"label": "User", "fieldname": "user", "fieldtype": "Link", "options": "User", "width": 150},
+        {"label": "Trainer", "fieldname": "trainer", "fieldtype": "Link", "options": "User", "width": 150},
         {"label": "Project", "fieldname": "project", "fieldtype": "Link", "options": "Project", "width": 150},
         {"label": "Site Name", "fieldname": "site_name", "fieldtype": "Data", "width": 150},
+        {"label": "Visit Date", "fieldname": "visit_date", "fieldtype": "Date", "width": 140},
         {"label": "Submitted Date", "fieldname": "submitted_date", "fieldtype": "Datetime", "width": 180},
     ]
 
@@ -46,6 +50,9 @@ def get_data(filters, questions):
 
     conditions = ""
 
+    if filters.get("feedback_master"):
+        conditions += " AND fr.feedback_master = %(feedback_master)s"
+
     if filters.get("project"):
         conditions += " AND fr.project = %(project)s"
 
@@ -54,7 +61,7 @@ def get_data(filters, questions):
 
     if filters.get("user"):
         conditions += " AND fr.user = %(user)s"
-    
+
     if filters.get("trainer"):
         conditions += " AND fr.trainer = %(trainer)s"
 
@@ -67,11 +74,13 @@ def get_data(filters, questions):
     responses = frappe.db.sql(f"""
         SELECT
             fr.name,
+            fr.feedback_master,
             fr.user,
+            fr.trainer,
             fr.project,
             fr.site_name,
+            fr.visit_date,
             fr.submitted_date,
-            fr.feedback_master,
             fa.question,
             fa.answer
         FROM
@@ -82,7 +91,6 @@ def get_data(filters, questions):
             fa.parent = fr.name
         WHERE
             fr.docstatus = 1
-            AND fr.feedback_master = %(feedback_master)s
             {conditions}
         ORDER BY fr.submitted_date DESC
     """, filters, as_dict=1)
@@ -93,9 +101,12 @@ def get_data(filters, questions):
 
         if row.name not in result:
             result[row.name] = {
+                "feedback_master": row.feedback_master,
                 "user": row.user,
+                "trainer": row.trainer,
                 "project": row.project,
                 "site_name": row.site_name,
+                "visit_date": row.visit_date,
                 "submitted_date": row.submitted_date
             }
 
