@@ -185,8 +185,7 @@
    "fieldname": "site_name",
    "fieldtype": "Link",
    "label": "Site Name",
-   "options": "Site",
-   "reqd": 1
+   "options": "Site"
   },
   {
    "fieldname": "contact_no",
@@ -216,7 +215,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-03-13 16:00:14.439974",
+ "modified": "2026-04-09 16:08:42.903721",
  "modified_by": "Administrator",
  "module": "Feedback App",
  "name": "Feedback Form",
